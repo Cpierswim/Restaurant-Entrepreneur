@@ -1,6 +1,6 @@
-Transaction 1: Store Number: 1 dish: Spagetti price: 9.99 total daily sales: 9.99
-Transaction 2: Store Number: 1 dish: Chef's Salad price: 8.99 total daily sales: 18.98
-Transaction 3: Store Number: 2 dish: Spagetti price: 9.99 total daily sales: 28.97
-Transaction 4: Store Number: 3 dish: Cheese Pizza price: 11.99 total daily sales: 40.96
-Transaction 5: Store Number: 2 dish: Spagetti price: 9.99 total daily sales: 50.95
-Transaction 6: Store Number: 3 dish: Chef's Salad price: 8.99 total daily sales: 59.940000000000005
+Transaction 1: Store Number: 1 dish: Chef's Salad price: 8.99 total daily sales: 8.99
+Transaction 2: Store Number: 1 dish: Chef's Salad price: 8.99 total daily sales: 17.98
+Transaction 3: Store Number: 2 dish: Cheese Pizza price: 11.99 total daily sales: 29.97
+Transaction 4: Store Number: 3 dish: Cheese Pizza price: 11.99 total daily sales: 41.96
+Transaction 5: Store Number: 2 dish: Cheese Pizza price: 11.99 total daily sales: 53.95
+Transaction 6: Store Number: 3 dish: Cheese Pizza price: 11.99 total daily sales: 65.94
