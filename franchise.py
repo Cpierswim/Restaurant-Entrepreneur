@@ -1,18 +1,11 @@
 from logger import logger
-from enum import Enum
+from helper import Helper
 from order_factory import OrderFactory
+import constants
 
-class OrderEnum(Enum):
-    PIZZA = "pizza"
-    PASTA = "pasta"
-    SALAD = "salad"
+
 
 class Franchise:
-
-    GET_ORDER_INPUT_COMMAND = "What would you like to order, pizza, pasta, or salad? "
-    UNRECOGNIZED_SELECTION_OUTPUT = "Unable to recognize selection, please try again"
-    GET_COUNT_INPUT_COMMAND = "How many would you like? "
-    UNRECOGNIZED_COUNT_OUTPUT = "Unable to recognize number, please try again"
     
     def __init__(self, location_number: int) -> None:
         '''Instantiates a Franchise Object
@@ -33,19 +26,19 @@ class Franchise:
         '''Private method that computes and returns a valid order string
         '''
         while True:
-            entry = input(Franchise.GET_ORDER_INPUT_COMMAND)
+            entry = input(constants.GET_ORDER_INPUT_COMMAND_STRING)
             entry = entry.strip().lower()
-            for available_order in OrderEnum:
+            for available_order in Helper.OrderEnum:
                 if entry == available_order.value:
                     return entry
-            print(Franchise.UNRECOGNIZED_SELECTION_OUTPUT + "\n")
+            print(constants.UNRECOGNIZED_SELECTION_OUTPUT_STRING + "\n")
 
     def __get_order_count() -> int:
         '''Unused private method for future use to get more than one of a single order'''
         while True:
-            entry = input(Franchise.GET_COUNT_INPUT_COMMAND)
+            entry = input(constants.GET_COUNT_INPUT_COMMAND_STRING)
             entry = entry.strip().lower()
             try:
                 return int(entry)
             except:
-                print(Franchise.UNRECOGNIZED_COUNT_OUTPUT + "\n")
+                print(constants.UNRECOGNIZED_COUNT_OUTPUT_STRING + "\n")

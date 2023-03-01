@@ -1,7 +1,8 @@
 from simulation import Simulation
 from logger import Logger
+from helper import Helper
 
-Logger.clear_log()
+Helper.clear_log()
 
 sim = Simulation()
 sim.run_simulation()
