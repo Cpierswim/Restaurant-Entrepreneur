@@ -19,8 +19,8 @@ class Franchise:
         '''
         order_string = Franchise.__get_order()
         order = OrderFactory.create_order(order_string)
-        #count = Franchise.__get_order_count()
-        logger.log_transaction(order, self.location_number)
+        count = Franchise.__get_order_count()
+        logger.log_transaction(order, self.location_number, count)
 
     def __get_order() -> str:
         '''Private method that computes and returns a valid order string

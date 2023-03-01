@@ -1,5 +1,6 @@
 from order import Order
 import constants
+import locale
 #from franchise import Franchise
 
 class Logger:
@@ -13,16 +14,18 @@ class Logger:
         self.transaction_count = transaction_count - 1
         self.daily_sales = daily_sales
 
-    def log_transaction(self, order: Order, store_number: int) -> None:
+    def log_transaction(self, order: Order, store_number: int, count: int) -> None:
         '''Logs a transaction to the constants.LOG_FILE_NAME
         
         order - The order to log
         store_number - The store number to include in the log
         '''
         self.transaction_count += 1
-        self.daily_sales += order.price
+        self.daily_sales += order.price * count
         log_file = open(constants.LOG_FILE_NAME, "a")
-        log = f"Transaction {self.transaction_count}: Store Number: {store_number} dish: {order.dish_name} price: {order.price} total daily sales: {self.daily_sales}\n"
+        price = locale.currency(order.price, grouping=True)
+        daily_sales = locale.currency(self.daily_sales, grouping= True)
+        log = f"Transaction {self.transaction_count}: Store Number: {store_number} dish: {order.dish_name.ljust(20)} price: {price.ljust(6)} count: {str(count).ljust(3)} total daily sales: {daily_sales}\n"
         log_file.write(log)
         log_file.close()
 

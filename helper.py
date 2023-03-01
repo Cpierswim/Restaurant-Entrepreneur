@@ -9,7 +9,6 @@ class Helper:
         log_file = open(constants.LOG_FILE_NAME, "w")
         log_file.write("")
         log_file.close()
-
     class OrderEnum(Enum):
         PIZZA = "pizza"
         PASTA = "pasta"
