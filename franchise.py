@@ -26,7 +26,7 @@ class Franchise:
         '''Private method that computes and returns a valid order string
         '''
         while True:
-            entry = input(constants.GET_ORDER_INPUT_COMMAND_STRING)
+            entry = input("\n" + constants.GET_ORDER_INPUT_COMMAND_STRING)
             entry = entry.strip().lower()
             for available_order in Helper.OrderEnum:
                 if entry == available_order.value:
