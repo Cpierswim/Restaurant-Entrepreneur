@@ -3,6 +3,7 @@ from pasta import Pasta
 from pizza import Pizza 
 from salad import Salad
 import constants
+from helper import Helper
 
 class OrderFactory:
     @staticmethod
@@ -14,10 +15,10 @@ class OrderFactory:
         Raises an exception if the type provided is not available
         '''
         type = type.lower()
-        if type == "pizza":
+        if type == Helper.OrderEnum.PIZZA.value:
             return Pizza(constants.PIZZA_NAME, constants.PIZZA_PRICE)
-        elif type == "pasta":
+        elif type == Helper.OrderEnum.PASTA.value:
             return Pasta(constants.PASTA_NAME, constants.PASTA_PRICE)
-        elif type == "salad":
+        elif type == Helper.OrderEnum.SALAD.value:
             return Salad(constants.SALAD_NAME, constants.SALAD_PRICE)
         raise Exception("Order type not found")
