@@ -3,6 +3,8 @@ from enum import Enum
 class Helper:
 
     def get_starting_log_number() -> int:
+        '''Returns the number that the first log of the day should start with
+        '''
         response = Helper.__ask_to_clear_log()
         if response == Helper.LogClearResponse.YES:
             Helper.clear_log()
@@ -18,7 +20,7 @@ class Helper:
             
 
     def __ask_to_clear_log():
-        '''Asks if the Logs should be cleared and returns a 'YES' or 'NO'
+        '''Asks if the Logs should be cleared and returns a 'YES' or 'NO' LogClearResponse
         '''
         valid_entry = False
         while not valid_entry:
@@ -40,8 +42,6 @@ class Helper:
         log_file.write("")
         log_file.close()
 
-    def get_last_log_number() -> int:
-        log_file = open(constants.LOG_FILE_NAME, )
     class OrderEnum(Enum):
         PIZZA = "pizza"
         PASTA = "pasta"

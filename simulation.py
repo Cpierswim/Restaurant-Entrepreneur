@@ -3,6 +3,8 @@ from helper import Helper
 class Simulation:
 
     def run_simulation(self) -> None:
+        '''Runs the simulation
+        '''
         first_franchise = Franchise(1)
         second_franchise = Franchise(2)
         third_franchise = Franchise(3)
